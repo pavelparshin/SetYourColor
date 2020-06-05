@@ -10,7 +10,7 @@ import UIKit
 
 class SetColorViewController: UIViewController {
     
-    // MARK: IB Outlet
+    // MARK: - IB Outlet
     @IBOutlet var colorView: UIView!
     @IBOutlet var valueRGBLabels: [UILabel]!
     @IBOutlet var valueRGBSliders: [UISlider]!
@@ -27,13 +27,13 @@ class SetColorViewController: UIViewController {
         
         colorView.layer.cornerRadius = 15
         
-        setColor()
-        showCurrentValue(with: valueRGBSliders)
+        setDelegateToTextField()
         
+        setColor()
     }
     
     
-    //MARK: IB Actions
+    //MARK: - IB Actions
     @IBAction func setRGBSliders(_ sender: UISlider) {
         
         viewColorOnText(with: sender)
@@ -45,7 +45,7 @@ class SetColorViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    //MARK: Set color
+    //MARK: - Set color
     //Изменяет значения слайдеров
     private func setColor() {
         if let transmittedColor = currentColor, isUpdate {
@@ -69,9 +69,10 @@ class SetColorViewController: UIViewController {
                                alpha: 1.0)
         
         colorView.backgroundColor = currentColor
+        showCurrentValue(with: valueRGBSliders)
     }
     
-    //MARK: Change Label and TF value
+    //MARK: - Change Label and TF value
     //Изменяет текст Label и TextField по тэгу слайдера
     private func viewColorOnText(with slider: UISlider) {
         valueRGBLabels[slider.tag].text = stringValue(slider.value)
@@ -89,7 +90,16 @@ class SetColorViewController: UIViewController {
     }
 }
 
+//MARK: - UITextFieldDelegate
 extension SetColorViewController: UITextFieldDelegate {
+    
+    //Устанавливаем делегирование и кнопку Done для всех Text Field
+    private func setDelegateToTextField() {
+        for textField in valueRGBTextField {
+            textField.delegate = self
+            textField.addDoneButtonOnKeyboard()
+        }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -101,6 +111,7 @@ extension SetColorViewController: UITextFieldDelegate {
             valueRGBLabels[textField.tag].text = textField.text
             valueRGBSliders[textField.tag].value = setSliderValue
         }
+        setColor()
     }
     
 }

@@ -15,6 +15,7 @@
 		2B169C01248A302400FDFBC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B169BFF248A302400FDFBC7 /* LaunchScreen.storyboard */; };
 		2B169C0D248A316000FDFBC7 /* SetColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B169C0C248A316000FDFBC7 /* SetColorViewController.swift */; };
 		2B169C12248A6C9B00FDFBC7 /* CurrentColorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B169C11248A6C9B00FDFBC7 /* CurrentColorDelegate.swift */; };
+		2B1A5873248ACEAF00A5D92E /* addDoneButtonOnKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A5872248ACEAF00A5D92E /* addDoneButtonOnKeyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2B169C02248A302400FDFBC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B169C0C248A316000FDFBC7 /* SetColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetColorViewController.swift; sourceTree = "<group>"; };
 		2B169C11248A6C9B00FDFBC7 /* CurrentColorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentColorDelegate.swift; sourceTree = "<group>"; };
+		2B1A5872248ACEAF00A5D92E /* addDoneButtonOnKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addDoneButtonOnKeyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				2B169BF4248A302200FDFBC7 /* AppDelegate.swift */,
 				2B169BF6248A302200FDFBC7 /* SceneDelegate.swift */,
 				2B169C02248A302400FDFBC7 /* Info.plist */,
+				2B1A5872248ACEAF00A5D92E /* addDoneButtonOnKeyboard.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				2B169C12248A6C9B00FDFBC7 /* CurrentColorDelegate.swift in Sources */,
 				2B169C0D248A316000FDFBC7 /* SetColorViewController.swift in Sources */,
 				2B169BF5248A302200FDFBC7 /* AppDelegate.swift in Sources */,
+				2B1A5873248ACEAF00A5D92E /* addDoneButtonOnKeyboard.swift in Sources */,
 				2B169BF7248A302200FDFBC7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
