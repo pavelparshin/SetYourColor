@@ -45,8 +45,7 @@ class SetColorViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    //MARK: - Set color
-    //Изменяет значения слайдеров
+    //MARK: - Set color func
     private func setColor() {
         if let transmittedColor = currentColor, isUpdate {
             
@@ -95,6 +94,7 @@ extension SetColorViewController: UITextFieldDelegate {
     
     //Устанавливаем делегирование и кнопку Done для всех Text Field
     private func setDelegateToTextField() {
+        
         for textField in valueRGBTextField {
             textField.delegate = self
             textField.addDoneButtonOnKeyboard()
@@ -107,12 +107,12 @@ extension SetColorViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if let setSliderValue: Float = Float(textField.text!) {
-            valueRGBLabels[textField.tag].text = textField.text
-            valueRGBSliders[textField.tag].value = setSliderValue
-        }
+        
+        guard let setSliderValue = Float(textField.text!) else { return }
+        valueRGBLabels[textField.tag].text = textField.text
+        valueRGBSliders[textField.tag].value = setSliderValue
+        
         setColor()
     }
-    
 }
 

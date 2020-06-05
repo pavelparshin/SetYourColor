@@ -19,7 +19,7 @@ class MainPageViewController: UIViewController {
     
 }
 
-//MARK: Delegate
+//MARK: - Delegate
 extension MainPageViewController: CurrentColorDelegate {
     
     func setCurrentColor(_ color: UIColor) {
