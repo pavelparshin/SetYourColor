@@ -13,7 +13,7 @@ class MainPageViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let setColorVC = segue.destination as! SetColorViewController
         setColorVC.colorDelegate = self
-        setColorVC.transmittedColor = view.backgroundColor
+        setColorVC.currentColor = view.backgroundColor
         setColorVC.isUpdate = true
     }
     

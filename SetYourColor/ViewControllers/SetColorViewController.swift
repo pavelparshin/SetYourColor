@@ -16,7 +16,7 @@ class SetColorViewController: UIViewController {
     @IBOutlet var valueRGBSliders: [UISlider]!
     @IBOutlet var valueRGBTextField: [UITextField]!
     
-    var transmittedColor: UIColor!
+    var currentColor: UIColor!
     var isUpdate = false
     
     var colorDelegate: CurrentColorDelegate!
@@ -32,6 +32,8 @@ class SetColorViewController: UIViewController {
         
     }
     
+    
+    //MARK: IB Actions
     @IBAction func setRGBSliders(_ sender: UISlider) {
         
         viewColorOnText(with: sender)
@@ -39,20 +41,14 @@ class SetColorViewController: UIViewController {
     }
     
     @IBAction func doneButton() {
-        colorDelegate.setCurrentColor(getColor())
+        colorDelegate.setCurrentColor(currentColor)
         dismiss(animated: true)
     }
     
-    //MARK: Private func
-    //Изменяет текст Label и TextField по тэгу слайдера
-    private func viewColorOnText(with slider: UISlider) {
-        valueRGBLabels[slider.tag].text = stringValue(slider.value)
-        valueRGBTextField[slider.tag].text = stringValue(slider.value)
-    }
-    
+    //MARK: Set color
     //Изменяет значения слайдеров
     private func setColor() {
-        if let transmittedColor = transmittedColor, isUpdate {
+        if let transmittedColor = currentColor, isUpdate {
             
             var red: CGFloat = 0
             var green: CGFloat = 0
@@ -67,14 +63,19 @@ class SetColorViewController: UIViewController {
             isUpdate = false
         }
         
-        colorView.backgroundColor = getColor()
+        currentColor = UIColor(red: CGFloat(valueRGBSliders[0].value),
+                               green: CGFloat(valueRGBSliders[1].value),
+                               blue: CGFloat(valueRGBSliders[2].value),
+                               alpha: 1.0)
+        
+        colorView.backgroundColor = currentColor
     }
     
-    private func getColor() -> UIColor {
-        UIColor(red: CGFloat(valueRGBSliders[0].value),
-                green: CGFloat(valueRGBSliders[1].value),
-                blue: CGFloat(valueRGBSliders[2].value),
-                alpha: 1.0)
+    //MARK: Change Label and TF value
+    //Изменяет текст Label и TextField по тэгу слайдера
+    private func viewColorOnText(with slider: UISlider) {
+        valueRGBLabels[slider.tag].text = stringValue(slider.value)
+        valueRGBTextField[slider.tag].text = stringValue(slider.value)
     }
     
     private func showCurrentValue(with sliders: [UISlider]) {
@@ -88,10 +89,19 @@ class SetColorViewController: UIViewController {
     }
 }
 
-extension SetColorViewController {
+extension SetColorViewController: UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super .touchesBegan(touches, with: event)
+        super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let setSliderValue: Float = Float(textField.text!) {
+            valueRGBLabels[textField.tag].text = textField.text
+            valueRGBSliders[textField.tag].value = setSliderValue
+        }
+    }
+    
 }
+
