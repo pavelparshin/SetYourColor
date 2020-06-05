@@ -44,13 +44,16 @@ class SetColorViewController: UIViewController {
     }
     
     //MARK: Private func
+    //Изменяет текст Label и TextField по тэгу слайдера
     private func viewColorOnText(with slider: UISlider) {
         valueRGBLabels[slider.tag].text = stringValue(slider.value)
         valueRGBTextField[slider.tag].text = stringValue(slider.value)
     }
     
+    //Изменяет значения слайдеров
     private func setColor() {
         if let transmittedColor = transmittedColor, isUpdate {
+            
             var red: CGFloat = 0
             var green: CGFloat = 0
             var blue: CGFloat = 0
