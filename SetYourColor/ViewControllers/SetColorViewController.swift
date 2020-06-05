@@ -17,6 +17,7 @@ class SetColorViewController: UIViewController {
     @IBOutlet var valueRGBTextField: [UITextField]!
     
     var transmittedColor: UIColor!
+    var isUpdate = false
     
     var colorDelegate: CurrentColorDelegate!
     
@@ -26,8 +27,9 @@ class SetColorViewController: UIViewController {
         
         colorView.layer.cornerRadius = 15
         
-        showCurrentValue(with: valueRGBSliders)
         setColor()
+        showCurrentValue(with: valueRGBSliders)
+        
     }
     
     @IBAction func setRGBSliders(_ sender: UISlider) {
@@ -48,17 +50,20 @@ class SetColorViewController: UIViewController {
     }
     
     private func setColor() {
-        if let transmittedColor = transmittedColor {
+        if let transmittedColor = transmittedColor, isUpdate {
             var red: CGFloat = 0
             var green: CGFloat = 0
             var blue: CGFloat = 0
             var alpha: CGFloat = 0
             transmittedColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-            
+
             valueRGBSliders[0].value = Float(red)
             valueRGBSliders[1].value = Float(green)
             valueRGBSliders[2].value = Float(blue)
+            
+            isUpdate = false
         }
+        
         colorView.backgroundColor = getColor()
     }
     
@@ -78,6 +83,9 @@ class SetColorViewController: UIViewController {
     private func stringValue(_ value: Float) -> String {
         String(format: "%.2f", value)
     }
+}
+
+extension SetColorViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super .touchesBegan(touches, with: event)

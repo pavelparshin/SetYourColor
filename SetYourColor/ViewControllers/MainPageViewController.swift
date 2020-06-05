@@ -14,10 +14,12 @@ class MainPageViewController: UIViewController {
         let setColorVC = segue.destination as! SetColorViewController
         setColorVC.colorDelegate = self
         setColorVC.transmittedColor = view.backgroundColor
+        setColorVC.isUpdate = true
     }
     
 }
 
+//MARK: Delegate
 extension MainPageViewController: CurrentColorDelegate {
     
     func setCurrentColor(_ color: UIColor) {
