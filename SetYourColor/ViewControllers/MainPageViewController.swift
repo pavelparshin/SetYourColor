@@ -9,12 +9,18 @@
 import UIKit
 
 class MainPageViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let setColorVC = segue.destination as! SetColorViewController
+        setColorVC.colorDelegate = self
+        setColorVC.transmittedColor = view.backgroundColor
     }
-
+    
 }
 
+extension MainPageViewController: CurrentColorDelegate {
+    
+    func setCurrentColor(_ color: UIColor) {
+        view.backgroundColor = color
+    }
+}

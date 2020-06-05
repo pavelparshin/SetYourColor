@@ -16,6 +16,10 @@ class SetColorViewController: UIViewController {
     @IBOutlet var valueRGBSliders: [UISlider]!
     @IBOutlet var valueRGBTextField: [UITextField]!
     
+    var transmittedColor: UIColor!
+    
+    var colorDelegate: CurrentColorDelegate!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +36,11 @@ class SetColorViewController: UIViewController {
         setColor()
     }
     
+    @IBAction func doneButton() {
+        colorDelegate.setCurrentColor(getColor())
+        dismiss(animated: true)
+    }
+    
     //MARK: Private func
     private func viewColorOnText(with slider: UISlider) {
         valueRGBLabels[slider.tag].text = stringValue(slider.value)
@@ -39,10 +48,25 @@ class SetColorViewController: UIViewController {
     }
     
     private func setColor() {
-        colorView.backgroundColor = UIColor(red: CGFloat(valueRGBSliders[0].value),
-                                            green: CGFloat(valueRGBSliders[1].value),
-                                            blue: CGFloat(valueRGBSliders[2].value),
-                                            alpha: 1.0)
+        if let transmittedColor = transmittedColor {
+            var red: CGFloat = 0
+            var green: CGFloat = 0
+            var blue: CGFloat = 0
+            var alpha: CGFloat = 0
+            transmittedColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+            
+            valueRGBSliders[0].value = Float(red)
+            valueRGBSliders[1].value = Float(green)
+            valueRGBSliders[2].value = Float(blue)
+        }
+        colorView.backgroundColor = getColor()
+    }
+    
+    private func getColor() -> UIColor {
+        UIColor(red: CGFloat(valueRGBSliders[0].value),
+                green: CGFloat(valueRGBSliders[1].value),
+                blue: CGFloat(valueRGBSliders[2].value),
+                alpha: 1.0)
     }
     
     private func showCurrentValue(with sliders: [UISlider]) {

@@ -14,7 +14,7 @@
 		2B169BFE248A302400FDFBC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B169BFD248A302400FDFBC7 /* Assets.xcassets */; };
 		2B169C01248A302400FDFBC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B169BFF248A302400FDFBC7 /* LaunchScreen.storyboard */; };
 		2B169C0D248A316000FDFBC7 /* SetColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B169C0C248A316000FDFBC7 /* SetColorViewController.swift */; };
-		2B169C0F248A3A6000FDFBC7 /* CurrentColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B169C0E248A3A6000FDFBC7 /* CurrentColorProtocol.swift */; };
+		2B169C12248A6C9B00FDFBC7 /* CurrentColorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B169C11248A6C9B00FDFBC7 /* CurrentColorDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		2B169C00248A302400FDFBC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B169C02248A302400FDFBC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B169C0C248A316000FDFBC7 /* SetColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetColorViewController.swift; sourceTree = "<group>"; };
-		2B169C0E248A3A6000FDFBC7 /* CurrentColorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentColorProtocol.swift; sourceTree = "<group>"; };
+		2B169C11248A6C9B00FDFBC7 /* CurrentColorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentColorDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 		2B169C10248A3A6800FDFBC7 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				2B169C0E248A3A6000FDFBC7 /* CurrentColorProtocol.swift */,
+				2B169C11248A6C9B00FDFBC7 /* CurrentColorDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -184,8 +184,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B169C0F248A3A6000FDFBC7 /* CurrentColorProtocol.swift in Sources */,
 				2B169BF9248A302200FDFBC7 /* MainPageViewController.swift in Sources */,
+				2B169C12248A6C9B00FDFBC7 /* CurrentColorDelegate.swift in Sources */,
 				2B169C0D248A316000FDFBC7 /* SetColorViewController.swift in Sources */,
 				2B169BF5248A302200FDFBC7 /* AppDelegate.swift in Sources */,
 				2B169BF7248A302200FDFBC7 /* SceneDelegate.swift in Sources */,
