@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		2B169BF5248A302200FDFBC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B169BF4248A302200FDFBC7 /* AppDelegate.swift */; };
 		2B169BF7248A302200FDFBC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B169BF6248A302200FDFBC7 /* SceneDelegate.swift */; };
-		2B169BF9248A302200FDFBC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B169BF8248A302200FDFBC7 /* ViewController.swift */; };
+		2B169BF9248A302200FDFBC7 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B169BF8248A302200FDFBC7 /* MainPageViewController.swift */; };
 		2B169BFC248A302200FDFBC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B169BFA248A302200FDFBC7 /* Main.storyboard */; };
 		2B169BFE248A302400FDFBC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B169BFD248A302400FDFBC7 /* Assets.xcassets */; };
 		2B169C01248A302400FDFBC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B169BFF248A302400FDFBC7 /* LaunchScreen.storyboard */; };
+		2B169C0D248A316000FDFBC7 /* SetColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B169C0C248A316000FDFBC7 /* SetColorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2B169BF1248A302200FDFBC7 /* SetYourColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetYourColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B169BF4248A302200FDFBC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B169BF6248A302200FDFBC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2B169BF8248A302200FDFBC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2B169BF8248A302200FDFBC7 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		2B169BFB248A302200FDFBC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B169BFD248A302400FDFBC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B169C00248A302400FDFBC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B169C02248A302400FDFBC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B169C0C248A316000FDFBC7 /* SetColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetColorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		2B169BF3248A302200FDFBC7 /* SetYourColor */ = {
 			isa = PBXGroup;
 			children = (
-				2B169BF4248A302200FDFBC7 /* AppDelegate.swift */,
-				2B169BF6248A302200FDFBC7 /* SceneDelegate.swift */,
-				2B169BF8248A302200FDFBC7 /* ViewController.swift */,
-				2B169BFA248A302200FDFBC7 /* Main.storyboard */,
-				2B169BFD248A302400FDFBC7 /* Assets.xcassets */,
-				2B169BFF248A302400FDFBC7 /* LaunchScreen.storyboard */,
-				2B169C02248A302400FDFBC7 /* Info.plist */,
+				2B169C08248A307700FDFBC7 /* SupportingFiles */,
+				2B169C0B248A30E000FDFBC7 /* ViewControllers */,
+				2B169C09248A30B000FDFBC7 /* Storyboards */,
+				2B169C0A248A30CC00FDFBC7 /* Sources */,
 			);
 			path = SetYourColor;
+			sourceTree = "<group>";
+		};
+		2B169C08248A307700FDFBC7 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2B169BF4248A302200FDFBC7 /* AppDelegate.swift */,
+				2B169BF6248A302200FDFBC7 /* SceneDelegate.swift */,
+				2B169C02248A302400FDFBC7 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		2B169C09248A30B000FDFBC7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2B169BFA248A302200FDFBC7 /* Main.storyboard */,
+				2B169BFF248A302400FDFBC7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		2B169C0A248A30CC00FDFBC7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2B169BFD248A302400FDFBC7 /* Assets.xcassets */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2B169C0B248A30E000FDFBC7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2B169BF8248A302200FDFBC7 /* MainPageViewController.swift */,
+				2B169C0C248A316000FDFBC7 /* SetColorViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +173,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B169BF9248A302200FDFBC7 /* ViewController.swift in Sources */,
+				2B169BF9248A302200FDFBC7 /* MainPageViewController.swift in Sources */,
+				2B169C0D248A316000FDFBC7 /* SetColorViewController.swift in Sources */,
 				2B169BF5248A302200FDFBC7 /* AppDelegate.swift in Sources */,
 				2B169BF7248A302200FDFBC7 /* SceneDelegate.swift in Sources */,
 			);
@@ -286,7 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2ZXQUQVQEL;
-				INFOPLIST_FILE = SetYourColor/Info.plist;
+				INFOPLIST_FILE = SetYourColor/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +330,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.pavelparshin.SetYourColor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -304,7 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2ZXQUQVQEL;
-				INFOPLIST_FILE = SetYourColor/Info.plist;
+				INFOPLIST_FILE = SetYourColor/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.pavelparshin.SetYourColor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

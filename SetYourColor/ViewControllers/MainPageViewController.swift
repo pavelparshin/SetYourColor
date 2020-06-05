@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainPageViewController.swift
 //  SetYourColor
 //
 //  Created by Pavel Parshin on 05.06.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
